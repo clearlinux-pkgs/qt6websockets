@@ -4,19 +4,17 @@
 # Using build pattern: cmake
 #
 Name     : qt6websockets
-Version  : 6.5.3
-Release  : 1
-URL      : https://download.qt.io/official_releases/qt/6.5/6.5.3/submodules/qtwebsockets-everywhere-src-6.5.3.tar.xz
-Source0  : https://download.qt.io/official_releases/qt/6.5/6.5.3/submodules/qtwebsockets-everywhere-src-6.5.3.tar.xz
+Version  : 6.6.0
+Release  : 2
+URL      : https://download.qt.io/official_releases/qt/6.6/6.6.0/submodules/qtwebsockets-everywhere-src-6.6.0.tar.xz
+Source0  : https://download.qt.io/official_releases/qt/6.6/6.6.0/submodules/qtwebsockets-everywhere-src-6.6.0.tar.xz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause GFDL-1.3 GPL-2.0 GPL-3.0 LGPL-3.0
 Requires: qt6websockets-lib = %{version}-%{release}
 Requires: qt6websockets-license = %{version}-%{release}
 BuildRequires : buildreq-cmake
-BuildRequires : mesa-dev
 BuildRequires : qt6base-dev
-BuildRequires : qt6declarative-dev
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
@@ -55,15 +53,15 @@ license components for the qt6websockets package.
 
 
 %prep
-%setup -q -n qtwebsockets-everywhere-src-6.5.3
-cd %{_builddir}/qtwebsockets-everywhere-src-6.5.3
+%setup -q -n qtwebsockets-everywhere-src-6.6.0
+cd %{_builddir}/qtwebsockets-everywhere-src-6.6.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1696371930
+export SOURCE_DATE_EPOCH=1697150219
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -99,7 +97,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1696371930
+export SOURCE_DATE_EPOCH=1697150219
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/qt6websockets
 cp %{_builddir}/qtwebsockets-everywhere-src-%{version}/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/qt6websockets/b073f11f0c81a95ab5e32aa6b5d23a5955a95274 || :
@@ -117,21 +115,19 @@ popd
 /usr/lib64/qt6/mkspecs/modules/qt_lib_websockets.pri
 /usr/lib64/qt6/mkspecs/modules/qt_lib_websockets_private.pri
 /usr/lib64/qt6/modules/WebSockets.json
-/usr/lib64/qt6/qml/QtWebSockets/plugins.qmltypes
-/usr/lib64/qt6/qml/QtWebSockets/qmldir
 
 %files dev
 %defattr(-,root,root,-)
-/usr/include/QtWebSockets/6.5.3/QtWebSockets/private/qdefaultmaskgenerator_p.h
-/usr/include/QtWebSockets/6.5.3/QtWebSockets/private/qwebsocket_p.h
-/usr/include/QtWebSockets/6.5.3/QtWebSockets/private/qwebsocketcorsauthenticator_p.h
-/usr/include/QtWebSockets/6.5.3/QtWebSockets/private/qwebsocketdataprocessor_p.h
-/usr/include/QtWebSockets/6.5.3/QtWebSockets/private/qwebsocketframe_p.h
-/usr/include/QtWebSockets/6.5.3/QtWebSockets/private/qwebsockethandshakeoptions_p.h
-/usr/include/QtWebSockets/6.5.3/QtWebSockets/private/qwebsockethandshakerequest_p.h
-/usr/include/QtWebSockets/6.5.3/QtWebSockets/private/qwebsockethandshakeresponse_p.h
-/usr/include/QtWebSockets/6.5.3/QtWebSockets/private/qwebsocketprotocol_p.h
-/usr/include/QtWebSockets/6.5.3/QtWebSockets/private/qwebsocketserver_p.h
+/usr/include/QtWebSockets/6.6.0/QtWebSockets/private/qdefaultmaskgenerator_p.h
+/usr/include/QtWebSockets/6.6.0/QtWebSockets/private/qwebsocket_p.h
+/usr/include/QtWebSockets/6.6.0/QtWebSockets/private/qwebsocketcorsauthenticator_p.h
+/usr/include/QtWebSockets/6.6.0/QtWebSockets/private/qwebsocketdataprocessor_p.h
+/usr/include/QtWebSockets/6.6.0/QtWebSockets/private/qwebsocketframe_p.h
+/usr/include/QtWebSockets/6.6.0/QtWebSockets/private/qwebsockethandshakeoptions_p.h
+/usr/include/QtWebSockets/6.6.0/QtWebSockets/private/qwebsockethandshakerequest_p.h
+/usr/include/QtWebSockets/6.6.0/QtWebSockets/private/qwebsockethandshakeresponse_p.h
+/usr/include/QtWebSockets/6.6.0/QtWebSockets/private/qwebsocketprotocol_p.h
+/usr/include/QtWebSockets/6.6.0/QtWebSockets/private/qwebsocketserver_p.h
 /usr/include/QtWebSockets/QMaskGenerator
 /usr/include/QtWebSockets/QWebSocket
 /usr/include/QtWebSockets/QWebSocketCorsAuthenticator
@@ -151,12 +147,6 @@ popd
 /usr/include/QtWebSockets/qwebsockets_global.h
 /usr/include/QtWebSockets/qwebsocketserver.h
 /usr/lib64/cmake/Qt6BuildInternals/StandaloneTests/QtWebSocketsTestsConfig.cmake
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qmlwebsocketsAdditionalTargetInfo.cmake
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qmlwebsocketsConfig.cmake
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qmlwebsocketsConfigVersion.cmake
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qmlwebsocketsConfigVersionImpl.cmake
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qmlwebsocketsTargets-relwithdebinfo.cmake
-/usr/lib64/cmake/Qt6Qml/QmlPlugins/Qt6qmlwebsocketsTargets.cmake
 /usr/lib64/cmake/Qt6WebSockets/Qt6WebSocketsAdditionalTargetInfo.cmake
 /usr/lib64/cmake/Qt6WebSockets/Qt6WebSocketsConfig.cmake
 /usr/lib64/cmake/Qt6WebSockets/Qt6WebSocketsConfigVersion.cmake
@@ -172,8 +162,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libQt6WebSockets.so.6
-/usr/lib64/libQt6WebSockets.so.6.5.3
-/usr/lib64/qt6/qml/QtWebSockets/libqmlwebsocketsplugin.so
+/usr/lib64/libQt6WebSockets.so.6.6.0
 
 %files license
 %defattr(0644,root,root,0755)
