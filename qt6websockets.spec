@@ -6,10 +6,10 @@
 # autospec commit: c02b2fe
 #
 Name     : qt6websockets
-Version  : 6.6.2
-Release  : 13
-URL      : https://download.qt.io/official_releases/qt/6.6/6.6.2/submodules/qtwebsockets-everywhere-src-6.6.2.tar.xz
-Source0  : https://download.qt.io/official_releases/qt/6.6/6.6.2/submodules/qtwebsockets-everywhere-src-6.6.2.tar.xz
+Version  : 6.6.3
+Release  : 14
+URL      : https://download.qt.io/official_releases/qt/6.6/6.6.3/submodules/qtwebsockets-everywhere-src-6.6.3.tar.xz
+Source0  : https://download.qt.io/official_releases/qt/6.6/6.6.3/submodules/qtwebsockets-everywhere-src-6.6.3.tar.xz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause GFDL-1.3 GPL-2.0 GPL-3.0 LGPL-3.0
@@ -58,15 +58,15 @@ license components for the qt6websockets package.
 
 
 %prep
-%setup -q -n qtwebsockets-everywhere-src-6.6.2
-cd %{_builddir}/qtwebsockets-everywhere-src-6.6.2
+%setup -q -n qtwebsockets-everywhere-src-6.6.3
+cd %{_builddir}/qtwebsockets-everywhere-src-6.6.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1711174331
+export SOURCE_DATE_EPOCH=1711502617
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -127,7 +127,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1711174331
+export SOURCE_DATE_EPOCH=1711502617
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/qt6websockets
 cp %{_builddir}/qtwebsockets-everywhere-src-%{version}/LICENSES/BSD-3-Clause.txt %{buildroot}/usr/share/package-licenses/qt6websockets/b073f11f0c81a95ab5e32aa6b5d23a5955a95274 || :
@@ -151,16 +151,16 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
-/usr/include/QtWebSockets/6.6.2/QtWebSockets/private/qdefaultmaskgenerator_p.h
-/usr/include/QtWebSockets/6.6.2/QtWebSockets/private/qwebsocket_p.h
-/usr/include/QtWebSockets/6.6.2/QtWebSockets/private/qwebsocketcorsauthenticator_p.h
-/usr/include/QtWebSockets/6.6.2/QtWebSockets/private/qwebsocketdataprocessor_p.h
-/usr/include/QtWebSockets/6.6.2/QtWebSockets/private/qwebsocketframe_p.h
-/usr/include/QtWebSockets/6.6.2/QtWebSockets/private/qwebsockethandshakeoptions_p.h
-/usr/include/QtWebSockets/6.6.2/QtWebSockets/private/qwebsockethandshakerequest_p.h
-/usr/include/QtWebSockets/6.6.2/QtWebSockets/private/qwebsockethandshakeresponse_p.h
-/usr/include/QtWebSockets/6.6.2/QtWebSockets/private/qwebsocketprotocol_p.h
-/usr/include/QtWebSockets/6.6.2/QtWebSockets/private/qwebsocketserver_p.h
+/usr/include/QtWebSockets/6.6.3/QtWebSockets/private/qdefaultmaskgenerator_p.h
+/usr/include/QtWebSockets/6.6.3/QtWebSockets/private/qwebsocket_p.h
+/usr/include/QtWebSockets/6.6.3/QtWebSockets/private/qwebsocketcorsauthenticator_p.h
+/usr/include/QtWebSockets/6.6.3/QtWebSockets/private/qwebsocketdataprocessor_p.h
+/usr/include/QtWebSockets/6.6.3/QtWebSockets/private/qwebsocketframe_p.h
+/usr/include/QtWebSockets/6.6.3/QtWebSockets/private/qwebsockethandshakeoptions_p.h
+/usr/include/QtWebSockets/6.6.3/QtWebSockets/private/qwebsockethandshakerequest_p.h
+/usr/include/QtWebSockets/6.6.3/QtWebSockets/private/qwebsockethandshakeresponse_p.h
+/usr/include/QtWebSockets/6.6.3/QtWebSockets/private/qwebsocketprotocol_p.h
+/usr/include/QtWebSockets/6.6.3/QtWebSockets/private/qwebsocketserver_p.h
 /usr/include/QtWebSockets/QMaskGenerator
 /usr/include/QtWebSockets/QWebSocket
 /usr/include/QtWebSockets/QWebSocketCorsAuthenticator
@@ -202,10 +202,10 @@ popd
 
 %files lib
 %defattr(-,root,root,-)
-/V3/usr/lib64/libQt6WebSockets.so.6.6.2
+/V3/usr/lib64/libQt6WebSockets.so.6.6.3
 /V3/usr/lib64/qt6/qml/QtWebSockets/libqmlwebsocketsplugin.so
 /usr/lib64/libQt6WebSockets.so.6
-/usr/lib64/libQt6WebSockets.so.6.6.2
+/usr/lib64/libQt6WebSockets.so.6.6.3
 /usr/lib64/qt6/metatypes/qt6websockets_relwithdebinfo_metatypes.json
 /usr/lib64/qt6/modules/WebSockets.json
 /usr/lib64/qt6/qml/QtWebSockets/libqmlwebsocketsplugin.so
