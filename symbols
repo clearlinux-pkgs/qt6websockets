@@ -1,3 +1,4 @@
+libQt6WebSockets.so.6:NonQt
 libQt6WebSockets.so.6:Qt_6
 libQt6WebSockets.so.6:Qt_6_PRIVATE_API
 libQt6WebSockets.so.6:_ZN10QWebSocket11qt_metacallEN11QMetaObject4CallEiPPv
